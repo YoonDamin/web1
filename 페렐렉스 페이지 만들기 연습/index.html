@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>페렐렉스 페이지 만들기 연습 소스</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			* { margin:0; padding:0; }
+			body, html { height:100%; margin:0; font:400 15px/1.8 "맑은 고딕", sans-serif; color: #777; } /*font:400은 글자 굵기, 기본사이즈임!*/
+			
+				.bgimg-1, .bgimg-2, .bgimg-3 { position:relative; opacity:0.65; background-attachment:fixed; background-position:center; background-repeat:no-repeat; background-size:cover; }
+				
+				.bgimg-1 { background-image:url('a1.jpg'); min-height:100%; }
+				.bgimg-2 { background-image:url('a2.jpg'); min-height:600px; }
+				.bgimg-3 { background-image:url('a3.jpg'); min-height:400px; }
+
+				.caption { position:absolute; left:0; top:50%; width:100%; text-align:center; color:#000; }
+					.caption span.border { background:#111; color:#fff; padding:18px; font-size:25px; letter-spacing:10px; }
+
+				h3 { letter-spacing:5px; text-transform:uppercase; font:20px '맑은 고딕', sans-serif; color:#111; }
+				
+				
+/* layout */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 420px;
+}
+
+/* Parallax Styles */
+.parallax-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 8px;
+  perspective-origin: 0%;
+  display: flex;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0px);
+}
+
+.foreground {
+  margin-top: auto;
+  margin-bottom: 50px;
+  
+  transform-origin: 0;
+  transform: translateZ(3px) scale(0.625);
+  
+  /* Uncomment the code below to see the difference the scale property makes! */
+  /* transform: translateZ(3px); */
+  /* transform: translateZ(0) scale(1); */
+}
+
+.foreground h1 {
+  font-size: 36px;
+}				
+				
+				
+				
+		</style>
+	</head>
+	<body>
+		<div class="bgimg-1">
+			<div class="caption"><span class="border">아래로 SCROLL 해보세요.</span></div>
+		</div>
+
+		<div style="color:#777; background-color:white; text-align:center ;padding:50px 80px; text-align: justify;">
+			<h3 style="text-align:center;">Parallax 페이지 만들기</h3>
+			<p>
+				페렐렉스 스크롤은 스크롤하는 동안 배경 컨텐츠가 전경 컨텐츠와 다른 속도로 이동하는 웹 사이트 추세입니다.<br>
+				Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling.</p>
+		</div>
+
+		<div class="bgimg-2">
+			<div class="caption">
+				<span class="border" style="background-color:transparent; font-size:25px; color:#f7f7f7;">LESS HEIGHT</span>
+			</div>
+		</div>
+
+		<div style="position:relative;">
+			<div style="color:#ddd; background-color:#282E34; text-align:center; padding:50px 80px; text-align: justify;">
+				<p>
+					Parallax  스크롤이 어떻게 작동하는지 느낌을 얻으려면 위아래로 스크롤하십시오.<br>
+					Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+			</div>
+		</div>
+
+		<div class="bgimg-3">
+			<div class="caption">
+				<span class="border" style="background-color:transparent; font-size:25px; color: #f7f7f7;">SCROLL UP</span>
+			</div>
+		</div>
+
+		<div style="position:relative;">
+			<div style="color:#ddd; background-color:#282E34; text-align:center; padding:50px 80px; text-align: justify;">
+				<p>
+					Parallax  스크롤이 어떻게 작동하는지 느낌을 얻으려면 위아래로 스크롤하십시오.<br>
+					Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+			</div>
+		</div>
+
+		<div class="bgimg-1">
+			<div class="caption">	<span class="border">완성!!</span></div>
+		</div>
+		
+		<div class="wrapper">
+  <div class="parallax-container">
+    <div class="background">
+      <img class="background__image" src="sws3.jpg" />
+    </div>
+    <div class="foreground">
+      <div class="foreground__content">
+        <h1>Oooo, parallax</h1>
+      </div>
+    </div>
+  </div>
+</div>
+		
+	</body>
+</html>
