@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+.flipping-cards li{position:relative; float:left; margin-right:10px;}
+.flipping-cards label{  display:block; width:200px; height:250px; cursor:pointer;}
+
+.flipping-cards .wrapper{
+  display:block; width:200px; height:250px;  
+-webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+transform-style: preserve-3d;
+
+-webkit-transition: all 2.50s;
+-moz-transition: all .50s;
+transition: all .50s;  
+}
+.flipping-cards .wrapper span{
+  display:block;
+  width:200px;
+  height:250px;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+.flipping-cards label .back{
+  border-radius:10px;
+  -webkit-backface-visibility:hidden; /* Chrome and Safari */
+-moz-backface-visibility:hidden; /* Firefox */
+-ms-backface-visibility:hidden; /* Internet Explorer */
+
+
+background-size: 70px 120px;
+background-color: #6d695c;  
+}
+
+.flipping-cards label .image{
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+  backface-visibility:hidden;
+-webkit-backface-visibility:hidden; /* Chrome and Safari */
+-moz-backface-visibility:hidden; /* Firefox */
+-ms-backface-visibility:hidden; /* Internet Explorer */  
+}
+
+
+
+.flipping-cards input[type="checkbox"]:checked + label .wrapper{
+      transform: rotateY(-180deg);
+      -webkit-transform: rotateY(-180deg);
+}
+
+label[for="item1"] .image{background-color:black;}
+
+label[for="item2"] .image{background-color:tomato;}
+
+label[for="item3"] .image{background-color:orange;}
+
+label[for="item4"] .image{background-color:blue;}
+
+
+
+
+
+input[type="checkbox"]{display:none;}
+ul,li{list-style:none;padding:0;margin:0;}
+p{font-weight:bold;}
+footer{clear:both; padding-top:20px;font-weight:bold;}
+footer a{color:blue;}
+
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div id="wrapper">
+
+        <div id="one">
+
+            <div class="oneQ" style=" 
+        
+                outline:1px solid red;
+                background-color:gray;
+                
+                "  >
+                <p>1.카드 발급시 동영상을 시청해야한다고 안내받았습니다. 동영상 시청은 어떻게 해야 하는건가요?</p>
+            </div>
+
+
+            <div class="oneA" style=" 
+                outline:1px solid blue;
+
+            "   >
+                <p>HRD-Net 홈페이지 (http://www.hrd.go.kr/)접속 후 개인회원으로 로그인한 후 동영상 시청 버튼을 클릭하시면 됩니다.</p>
+
+            </div>
+
+        </div>
+
+
+
+<!--뒤집기-->
+      
+        <ul class="flipping-cards">
+          <li>
+            <input type="checkbox" id="item1">
+            <label for="item1">
+              <span class="wrapper">
+                <span class="image"></span>
+                <span class="back"></span> 
+              </span>
+            </label>
+            
+          </li>
+          <li>
+            <input type="checkbox" id="item2">
+              <label for="item2">
+                <span class="wrapper">
+                  <span class="image"></span>
+                  <span class="back"></span> 
+                </span>
+              </label>
+              
+          </li>
+          <li>
+            <input type="checkbox" id="item3">
+            <label for="item3">
+              <span class="wrapper">
+                <span class="image">color-back</span>
+                <span class="back">front</span> 
+              </span>
+            </label>
+            
+          </li>
+          <li>
+            <input type="checkbox" id="item4">
+            <label for="item4">
+              <span class="wrapper">      
+                <span class="image" style="color:white; font-size:70%; line-height:200%;"><p>국가기간전략산업직종의 교육 훈련을 듣고자 한다면 우선적으로 올해부터 시행된 "국민내일배움카드"를 발급 받아야 하며 누구나 국민내일배움카드 신청 가능
+                    다만, 만75세 이상인 분, 공무원, 사립학교 교직원, 졸업예정자 이외 재학생, 연 매출 1억 5천만원 이상의 자영업자, 월 임금 300만원 이상인 대기업근로자(45세 미만)·특수형태근로 종사자는 제외됩니다.</p></span>
+                <span class="back" style="color:white; font-size:130%; line-height:200%;""><p>2.국비지원 교육과정을 받는 대상자는 누구인가요?</p></span> 
+              </span>
+            </label>
+            
+          </li>
+        </ul>
+<!--뒤집기-->
+
+
+
+    </div><!--wrapper-->
+
+
+
+
+</body>
+</html>
